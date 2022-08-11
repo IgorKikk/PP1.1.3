@@ -1,18 +1,20 @@
 package jm.task.core.jdbc.service;
 
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
+import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.model.User;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
-    UserDaoJDBCImpl userDao = new UserDaoJDBCImpl();
-    public void createUsersTable() {
+    UserDao userDao = new UserDaoJDBCImpl();
+    public void createUsersTable() throws SQLException, IOException {
         userDao.createUsersTable();
     }
     public void dropUsersTable() {
-
         userDao.dropUsersTable();
     }
 
