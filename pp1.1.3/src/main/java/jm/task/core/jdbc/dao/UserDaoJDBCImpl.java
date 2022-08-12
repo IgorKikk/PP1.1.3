@@ -104,6 +104,7 @@ public class UserDaoJDBCImpl implements UserDao {
                 System.out.println(usersList);
                 return usersList;
             } catch (SQLException e) {
+                connection.rollback();
                 System.out.println("Users is not import to list");
                 e.printStackTrace();
                 return null;
